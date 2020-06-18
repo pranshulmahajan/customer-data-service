@@ -9,12 +9,12 @@ public class Customer {
 	@Id
 	private int customerId;
 	private String customerName;
-	private int accountId;
+	private long accountId;
 	private String customerAddress;
 	
 
 	
-	public Customer(int customerId, String customerName, int accountId, String customerAddress) {
+	public Customer(int customerId, String customerName, long accountId, String customerAddress) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -34,7 +34,7 @@ public class Customer {
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
-	public int getAccountId() {
+	public long getAccountId() {
 		return accountId;
 	}
 	public void setAccountId(int accountId) {

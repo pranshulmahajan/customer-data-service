@@ -8,7 +8,7 @@ import com.customer.model.Customer;
 import com.customer.repository.CustomerRepository;
 
 @Service
-public class CustomerService {
+public class CustomerService  {
 
 	@Autowired
 	private CustomerRepository customerRepository;
