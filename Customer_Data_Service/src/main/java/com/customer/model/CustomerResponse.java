@@ -1,18 +1,34 @@
 package com.customer.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "Customer")
-public class Customer {
+public class CustomerResponse {
 	
-	@Id
+	private long id;
 	private int cust_id;
 	private String title;
 	private String first_name;
 	private String last_name;
 	private ProductData product_data;
 	private Address addresses;
+	
+	
+	
+	public CustomerResponse(long id, int cust_id, String title, String first_name, String last_name,
+			ProductData product_data, Address addresses) {
+		super();
+		this.id = id;
+		this.cust_id = cust_id;
+		this.title = title;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.product_data = product_data;
+		this.addresses = addresses;
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
 	public int getCust_id() {
 		return cust_id;
 	}
@@ -49,14 +65,13 @@ public class Customer {
 	public void setAddresses(Address addresses) {
 		this.addresses = addresses;
 	}
-	
 	@Override
 	public String toString() {
-		return "Customer [cust_id=" + cust_id + ", title=" + title + ", first_name=" + first_name + ", last_name="
-				+ last_name + ", product_data=" + product_data + ", addresses=" + addresses + "]";
+		return "CustomerResponse [id=" + id + ", cust_id=" + cust_id + ", title=" + title + ", first_name=" + first_name
+				+ ", last_name=" + last_name + ", product_data=" + product_data + ", addresses=" + addresses + "]";
 	}
-	
 	
 	
 
 }
+
