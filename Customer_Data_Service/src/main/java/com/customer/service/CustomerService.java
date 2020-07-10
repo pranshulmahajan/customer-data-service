@@ -1,8 +1,7 @@
 package com.customer.service;
 
 
-import java.util.Optional;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.customer.model.Customer;
@@ -10,22 +9,27 @@ import com.customer.model.CustomerRequest;
 import com.customer.model.CustomerResponse;
 import com.customer.repository.CustomerRepository;
 
+
 @Service
-public class CustomerService  {
+public class CustomerService {
 
 	@Autowired
 	private CustomerRepository customerRepository;
 
-	public CustomerResponse getByCustomerDetailsId(CustomerRequest cust) {
-		Optional<Customer> optional= customerRepository.findById((cust.getParty_id()));
+	public CustomerResponse retrieveByCustomerDetailsById(CustomerRequest customer) {
 		CustomerResponse customerResponse=null;
-		if (optional.isPresent()) { 
-			customerResponse= new CustomerResponse(createRandomId(),optional.get().getCust_id(),optional.get().getTitle(),optional.get().getFirst_name(),optional.get().getLast_name(),optional.get().getProduct_data(),optional.get().getAddresses());  
-		} 
+		List<Customer> custList= customerRepository.retrieveByCustomerDetailsById(customer.getParty_id());
+		if (custList.size() == 1) 
+		{	
+			customerResponse= new CustomerResponse(createRandomId(),custList.get(0).getAccount_id(),custList.get(0).getTitle(),custList.get(0).getFirst_name(),custList.get(0).getLast_name(),custList.get(0).getProduct_data(),custList.get(0).getAddresses());
+		}
 		return customerResponse;
 	}
-
+	
+	
 	private static long createRandomId(){    
 		return (long)(Math.random()*100000 + 3333300000L);
 	}
+		
+
 }

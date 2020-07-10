@@ -8,11 +8,11 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>MongoDbPro</artifactId>
+	<groupId>com.customer</groupId>
+	<artifactId>Customer-MongoDB-API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Customer_Data_Service</name>
-	<description>A Spring Boot API with MongoDB</description>
+	<description>Getting customer details</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -48,6 +48,8 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>customer-data-service</finalName>
 	</build>
-
+	
+		
 </project>

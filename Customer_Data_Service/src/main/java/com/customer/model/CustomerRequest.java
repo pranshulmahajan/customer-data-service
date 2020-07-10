@@ -24,7 +24,12 @@ public class CustomerRequest {
 	public void setParty_id(int party_id) {
 		this.party_id = party_id;
 	}
+	@Override
+	public String toString() {
+		return "CustomerRequest [first_name=" + first_name + ", last_name=" + last_name + ", party_id=" + party_id
+				+ "]";
+	}
 	
 	
-
+	
 }

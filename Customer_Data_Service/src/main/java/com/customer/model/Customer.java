@@ -7,17 +7,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Customer {
 	
 	@Id
-	private int cust_id;
+	private int account_id;
 	private String title;
 	private String first_name;
 	private String last_name;
 	private ProductData product_data;
 	private Address addresses;
-	public int getCust_id() {
-		return cust_id;
+
+	public int getAccount_id() {
+		return account_id;
 	}
-	public void setCust_id(int cust_id) {
-		this.cust_id = cust_id;
+	public void setAccount_id(int account_id) {
+		this.account_id = account_id;
 	}
 	public String getTitle() {
 		return title;
@@ -52,7 +53,7 @@ public class Customer {
 	
 	@Override
 	public String toString() {
-		return "Customer [cust_id=" + cust_id + ", title=" + title + ", first_name=" + first_name + ", last_name="
+		return "Customer [account_id=" + account_id + ", title=" + title + ", first_name=" + first_name + ", last_name="
 				+ last_name + ", product_data=" + product_data + ", addresses=" + addresses + "]";
 	}
 	

@@ -17,11 +17,11 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerservice;
 
-	// retrieve single customer detail from DB
 	@GetMapping("/")
 	@ResponseBody
-	public CustomerResponse retrieveByCustomerDetailsId(@RequestBody  CustomerRequest customer) throws Exception {
-		CustomerResponse customerResponse= customerservice.getByCustomerDetailsId(customer);
+	public CustomerResponse retrieveByCustomerDetailsById(@RequestBody  CustomerRequest customer) throws Exception {
+		CustomerResponse customerResponse= (CustomerResponse) customerservice.retrieveByCustomerDetailsById(customer);
 		return customerResponse;
 	}
+	
 }
